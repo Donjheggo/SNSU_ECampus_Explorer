@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Don Machiatto",
-    "slug": "don_machiatto",
+    "name": "ECampus Explorer",
+    "slug": "ecampus_explorer",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -22,7 +22,7 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.caroljhegg.don_machiatto"
+      "package": "com.caroljhegg.ecampus_explorer"
     },
     "web": {
       "bundler": "metro",
@@ -35,7 +35,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "0b353a63-2ba9-4da7-9032-9ba8f6fb858c"
+        "projectId": ""
       }
     }
   }

@@ -1,4 +1,4 @@
-import { TouchableOpacity, View } from "react-native";
+import { TouchableOpacity, View, Platform } from "react-native";
 import { Text } from "../ui/text";
 import type { LocationT } from "~/app/(tabs)/locations";
 import { Link } from "expo-router";
@@ -15,7 +15,9 @@ export default function LocactionCard({ item }: { item: LocationT }) {
         <TouchableOpacity>
           <Image
             source={item.image}
-            placeholder={{ blurhash }}
+            placeholder={{
+              blurhash: Platform.OS === "android" ? undefined : blurhash,
+            }}
             contentFit="cover"
             style={{ height: 175, borderRadius: 10 }}
             transition={1000}

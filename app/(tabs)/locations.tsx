@@ -1,5 +1,12 @@
 import SearchBar from "~/components/locations/search-bar";
-import { View, SafeAreaView, ScrollView, Platform, StatusBar } from "react-native";
+import {
+  View,
+  SafeAreaView,
+  ScrollView,
+  Platform,
+  StatusBar,
+  FlatList,
+} from "react-native";
 import { useState, useEffect } from "react";
 import { Tables } from "~/database.types";
 import { SearchLocations } from "~/lib/actions/locations";
@@ -38,9 +45,13 @@ export default function Screen() {
               marginTop: 15,
             }}
           >
-            {products?.map((item, index) => (
-              <LocationCard item={item} key={index} />
-            ))}
+            <FlatList
+              data={products}
+              renderItem={(item) => <LocationCard item={item} />}
+              keyExtractor={(_, index) => `${index}`}
+              numColumns={2}
+              columnWrapperStyle={{ justifyContent: "space-between" }}
+            />
           </View>
         </View>
       </ScrollView>

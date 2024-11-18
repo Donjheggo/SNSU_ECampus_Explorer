@@ -47,7 +47,7 @@ export default function Screen() {
           >
             <FlatList
               data={products}
-              renderItem={(item) => <LocationCard item={item} />}
+              renderItem={({item}) => <LocationCard item={item} />}
               keyExtractor={(_, index) => `${index}`}
               numColumns={2}
               columnWrapperStyle={{ justifyContent: "space-between" }}

@@ -46,14 +46,19 @@ export default function Screen() {
             </View>
             {location?.image && (
               <Image
-                placeholder={{ blurhash }}
+                placeholder={{
+                  blurhash: Platform.OS === "android" ? undefined : blurhash,
+                }}
                 source={location?.image}
                 style={{ borderRadius: 10, height: 400 }}
                 contentFit="cover"
                 transition={1000}
               />
             )}
-            <View style={{ display: "flex", flexDirection: "column" }} className="mt-5">
+            <View
+              style={{ display: "flex", flexDirection: "column" }}
+              className="mt-5"
+            >
               <View>
                 <Text className="text-4xl" style={{ fontWeight: "bold" }}>
                   {location?.name}
